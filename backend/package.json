@@ -1,0 +1,27 @@
+{
+  "name": "auragen-backend",
+  "version": "0.1.0",
+  "description": "AuraGen - Week 1 & Week 2: Code-Gen Agent + Safety/Compilation layer",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.24.0",
+    "@babel/parser": "^7.24.0",
+    "@babel/traverse": "^7.24.0",
+    "@babel/generator": "^7.24.0",
+    "@langchain/openai": "^0.1.0",
+    "@langchain/core": "^0.1.0",
+    "langchain": "^0.1.30",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

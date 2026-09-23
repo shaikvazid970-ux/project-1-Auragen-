@@ -89,4 +89,5 @@ io.on("connection", (socket) => {
 
 server.listen(PORT, () => {
   console.log(`AuraGen backend listening on :${PORT}`);
+  console.log(`Client origin configured as: ${CLIENT_ORIGIN}`);
 });

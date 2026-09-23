@@ -17,7 +17,9 @@ app.use(
     origin: CLIENT_ORIGIN,
   })
 );
-app.use(express.json());
+app.use(
+  express.json()
+);
 
 app.get("/health", (_req, res) =>
   res.json({

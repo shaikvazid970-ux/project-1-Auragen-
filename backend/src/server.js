@@ -12,7 +12,11 @@ const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
 const TRIGGER_THRESHOLD = Number(process.env.FRICTION_TRIGGER_THRESHOLD || 72);
 
 const app = express();
-app.use(cors({ origin: CLIENT_ORIGIN }));
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN,
+  })
+);
 app.use(express.json());
 
 app.get("/health", (_req, res) =>

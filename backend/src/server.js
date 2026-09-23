@@ -15,7 +15,12 @@ const app = express();
 app.use(cors({ origin: CLIENT_ORIGIN }));
 app.use(express.json());
 
-app.get("/health", (_req, res) => res.json({ ok: true }));
+app.get("/health", (_req, res) =>
+  res.json({
+    ok: true,
+    service: "auragen-backend",
+  })
+);
 
 const server = http.createServer(app);
 const io = new Server(server, {

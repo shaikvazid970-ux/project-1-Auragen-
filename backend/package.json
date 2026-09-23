@@ -1,7 +1,7 @@
 {
   "name": "auragen-backend",
   "version": "0.1.0",
-  "description": "AuraGen - Week 1 & Week 2: Code-Gen Agent + Safety/Compilation layer",
+  "description": "Backend service for the Auragen generative UI platform",
   "main": "src/server.js",
   "type": "commonjs",
   "scripts": {

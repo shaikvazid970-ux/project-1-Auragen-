@@ -1,1 +1,6 @@
--e "node_modules/\n.env\n.env.local\n.next/\ndist/" 
+
+node_modules/
+.env
+.env.local
+.next/
+dist/

@@ -1,3 +1,20 @@
+# Auragen
+
+Auragen is a generative UI platform for AI-assisted user interface generation.
+
+## Project Goal
+
+The project focuses on generating dynamic user interfaces while monitoring user interaction and friction signals.
+
+## Main Components
+
+- AI-assisted UI generation
+- Backend code generation
+- Generated code safety validation
+- Dynamic frontend rendering
+- User friction tracking
+- WebSocket communication
+
 # AuraGen — Week 1 & Week 2 Code
 
 Implements the Week 1 and Week 2 deliverables from the AuraGen dev plan.

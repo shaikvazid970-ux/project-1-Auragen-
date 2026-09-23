@@ -30,7 +30,10 @@ app.get("/health", (_req, res) =>
 
 const server = http.createServer(app);
 const io = new Server(server, {
-  cors: { origin: CLIENT_ORIGIN, methods: ["GET", "POST"] },
+  cors: {
+    origin: CLIENT_ORIGIN,
+    methods: ["GET", "POST"],
+  },
 });
 
 /**

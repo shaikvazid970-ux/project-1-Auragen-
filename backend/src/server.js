@@ -64,7 +64,9 @@ io.on("connection", (socket) => {
     if (cognitiveLoadScore < TRIGGER_THRESHOLD) {
   return;
 }
-    if (now - lastTriggerAt < COOLDOWN_MS) return;
+    if (now - lastTriggerAt < COOLDOWN_MS) {
+  return;
+}
     lastTriggerAt = now;
 
     socket.emit("codegen:started", { stuckField, cognitiveLoadScore });

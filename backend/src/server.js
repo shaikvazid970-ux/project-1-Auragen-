@@ -140,6 +140,9 @@ socket.emit("codegen:success", {
 });
 
 server.listen(PORT, () => {
+  const startedAt = new Date().toISOString();
+
   console.log(`AuraGen backend listening on :${PORT}`);
   console.log(`Client origin configured as: ${CLIENT_ORIGIN}`);
+  console.log(`Server started at: ${startedAt}`);
 });

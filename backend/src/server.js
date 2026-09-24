@@ -88,7 +88,11 @@ io.on("connection", (socket) => {
       const result = validateAndCompile(rawCode);
 
       if (!result.ok) {
-        console.warn("[safety] rejected generation:", result.error.reason, result.error.details);
+       console.warn(
+  "[safety] rejected generation:",
+  result.error.reason,
+  result.error.details
+);
         socket.emit("codegen:error", {
           reason: result.error.reason,
           details: result.error.details,

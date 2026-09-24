@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
   let lastTriggerAt = 0;
   const COOLDOWN_MS = 5000; // avoid spamming GPT-4o on every telemetry tick
 
-  socket.on("telemetry:update", async (payload) => {
+  socket.on("telemetry:update", async (payload = {}) => {
     const { cognitiveLoadScore, reason, stuckField, formState, formSchema } = payload;
 
     socket.emit("telemetry:ack", { score: cognitiveLoadScore });

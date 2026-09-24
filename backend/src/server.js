@@ -56,7 +56,9 @@ io.on("connection", (socket) => {
   socket.on("telemetry:update", async (payload = {}) => {
     const { cognitiveLoadScore, reason, stuckField, formState, formSchema } = payload;
 
-    socket.emit("telemetry:ack", { score: cognitiveLoadScore });
+   socket.emit("telemetry:ack", {
+  score: cognitiveLoadScore,
+});
 
     const now = Date.now();
     if (cognitiveLoadScore < TRIGGER_THRESHOLD) return;

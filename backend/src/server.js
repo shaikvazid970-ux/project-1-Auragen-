@@ -61,7 +61,9 @@ io.on("connection", (socket) => {
 });
 
     const now = Date.now();
-    if (cognitiveLoadScore < TRIGGER_THRESHOLD) return;
+    if (cognitiveLoadScore < TRIGGER_THRESHOLD) {
+  return;
+}
     if (now - lastTriggerAt < COOLDOWN_MS) return;
     lastTriggerAt = now;
 

@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const { Server } = require("socket.io");
-
+const packageInfo = require("../package.json");
 const { generateComponent } = require("./codegen/chain");
 const { validateAndCompile } = require("./safety/astValidator");
 
@@ -27,9 +27,9 @@ app.get("/health", (_req, res) =>
   res.json({
     ok: true,
     service: "auragen-backend",
+    version: packageInfo.version,
   })
 );
-
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {

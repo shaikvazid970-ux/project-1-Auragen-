@@ -9,7 +9,9 @@ const { validateAndCompile } = require("./safety/astValidator");
 
 const PORT = process.env.PORT || 4000;
 const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "http://localhost:3000";
-const TRIGGER_THRESHOLD = Number(process.env.FRICTION_TRIGGER_THRESHOLD || 72);
+const TRIGGER_THRESHOLD = Number(
+  process.env.FRICTION_TRIGGER_THRESHOLD || 72
+);
 
 const app = express();
 app.use(

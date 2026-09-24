@@ -54,7 +54,21 @@ io.on("connection", (socket) => {
   const COOLDOWN_MS = 5000; // avoid spamming GPT-4o on every telemetry tick
 
   socket.on("telemetry:update", async (payload = {}) => {
-    const { cognitiveLoadScore, reason, stuckField, formState, formSchema } = payload;
+    const {
+  cognitiveLoadScore,
+  reason,
+  stuckField,
+  formState,
+  formSchema,
+} = payload;
+
+if (!Number.isFinite(cognitiveLoadScore)) {
+  socket.emit("codegen:error", {
+    reason: "invalid_telemetry",
+    details: "cognitiveLoadScore must be a valid number",
+  });
+  return;
+}
 
    socket.emit("telemetry:ack", {
   score: cognitiveLoadScore,

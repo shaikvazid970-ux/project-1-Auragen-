@@ -68,10 +68,13 @@ io.on("connection", (socket) => {
   formSchema,
 } = payload;
 
-if (!Number.isFinite(cognitiveLoadScore)) {
+if (
+  !Number.isFinite(cognitiveLoadScore) ||
+  cognitiveLoadScore < 0
+) {
   socket.emit("codegen:error", {
     reason: "invalid_telemetry",
-    details: "cognitiveLoadScore must be a valid number",
+    details: "cognitiveLoadScore must be a non-negative number",
   });
   return;
 }

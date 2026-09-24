@@ -105,3 +105,10 @@ generation.
   starting point; for production you'd likely want a stricter sandbox
   (e.g. a sandboxed iframe or Web Worker) in addition to the AST
   allowlist.
+## Backend Health Check
+
+The backend exposes a health endpoint for checking service status:
+
+`GET /health`
+
+The response includes the service name, backend version, and current uptime.

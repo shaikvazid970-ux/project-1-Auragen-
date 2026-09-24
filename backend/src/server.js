@@ -69,7 +69,10 @@ io.on("connection", (socket) => {
 }
     lastTriggerAt = now;
 
-    socket.emit("codegen:started", { stuckField, cognitiveLoadScore });
+    socket.emit("codegen:started", {
+  stuckField,
+  cognitiveLoadScore,
+});
 
     try {
       // --- Week 1: Code-Gen Agent ---

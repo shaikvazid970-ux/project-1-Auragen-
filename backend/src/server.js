@@ -69,6 +69,7 @@ io.on("connection", (socket) => {
 } = payload;
 
 if (
+  typeof cognitiveLoadScore !== "number" ||
   !Number.isFinite(cognitiveLoadScore) ||
   cognitiveLoadScore < 0 ||
   cognitiveLoadScore > 100

@@ -14,6 +14,7 @@ const TRIGGER_THRESHOLD = Number(
 );
 
 const app = express();
+const serverStartedAt = Date.now();
 app.use(
   cors({
     origin: CLIENT_ORIGIN,
@@ -28,6 +29,7 @@ app.get("/health", (_req, res) =>
     ok: true,
     service: "auragen-backend",
     version: packageInfo.version,
+    uptimeSeconds: Math.floor((Date.now() - serverStartedAt) / 1000),
   })
 );
 const server = http.createServer(app);

@@ -33,6 +33,9 @@ app.get("/health", (_req, res) =>
   })
 );
 const server = http.createServer(app);
+server.on("error", (err) => {
+  console.error("[server] HTTP server error:", err.message);
+});
 const io = new Server(server, {
   cors: {
     origin: CLIENT_ORIGIN,

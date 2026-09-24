@@ -100,11 +100,13 @@ io.on("connection", (socket) => {
         return;
       }
 
-      socket.emit("codegen:success", {
-        stuckField,
-        code: result.code,
-        generatedAt: new Date().toISOString(),
-      });
+      const generatedAt = new Date().toISOString();
+
+socket.emit("codegen:success", {
+  stuckField,
+  code: result.code,
+  generatedAt,
+});
     } catch (err) {
       console.error("[codegen] pipeline failure:", err);
       socket.emit("codegen:error", { reason: "pipeline_error", details: err.message });

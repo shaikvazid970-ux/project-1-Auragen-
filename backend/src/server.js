@@ -48,7 +48,11 @@ const io = new Server(server, {
  * Compilation layer, and streams the result back.
  */
 io.on("connection", (socket) => {
-  console.log(`[ws] client connected: ${socket.id}`);
+  const connectedAt = new Date().toISOString();
+
+  console.log(
+    `[ws] client connected: ${socket.id} at ${connectedAt}`
+  );
 
   let lastTriggerAt = 0;
   const COOLDOWN_MS = 5000; // avoid spamming GPT-4o on every telemetry tick

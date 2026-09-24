@@ -58,6 +58,12 @@ io.on("connection", (socket) => {
   console.log(
     `[ws] client connected: ${socket.id} at ${connectedAt}`
   );
+    socket.on("error", (err) => {
+    console.error(
+      `[ws] socket error for ${socket.id}:`,
+      err.message
+    );
+  });
 
   let lastTriggerAt = 0;
   const COOLDOWN_MS = 5000; // avoid spamming GPT-4o on every telemetry tick

@@ -70,11 +70,12 @@ io.on("connection", (socket) => {
 
 if (
   !Number.isFinite(cognitiveLoadScore) ||
-  cognitiveLoadScore < 0
+  cognitiveLoadScore < 0 ||
+  cognitiveLoadScore > 100
 ) {
   socket.emit("codegen:error", {
     reason: "invalid_telemetry",
-    details: "cognitiveLoadScore must be a non-negative number",
+    details: "cognitiveLoadScore must be between 0 and 100",
   });
   return;
 }

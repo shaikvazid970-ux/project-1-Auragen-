@@ -108,11 +108,12 @@ socket.emit("codegen:success", {
   generatedAt,
 });
     } catch (err) {
-      console.error("[codegen] pipeline failure:", err);
-      socket.emit("codegen:error", { reason: "pipeline_error", details: err.message });
-    }
+  console.error("[codegen] pipeline failure:", err);
+  socket.emit("codegen:error", {
+    reason: "pipeline_error",
+    details: err.message,
   });
-
+}
   socket.on("disconnect", () => {
     console.log(`[ws] client disconnected: ${socket.id}`);
   });

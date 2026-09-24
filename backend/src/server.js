@@ -128,9 +128,11 @@ socket.emit("codegen:success", {
     details: err.message,
   });
 }
-  socket.on("disconnect", () => {
-    console.log(`[ws] client disconnected: ${socket.id}`);
-  });
+ socket.on("disconnect", () => {
+  const disconnectedAt = new Date().toISOString();
+  console.log(
+    `[ws] client disconnected: ${socket.id} at ${disconnectedAt}`
+  );
 });
 
 server.listen(PORT, () => {
